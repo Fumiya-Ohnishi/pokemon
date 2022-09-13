@@ -1,30 +1,34 @@
-import React from 'react'
-import "./Card.css"
+import React from "react"
+import "./Card.scss"
 
-const card = ({pokemon}) => {
+const card = ({ pokemon }) => {
   return (
-    <div className='card'>
-      <div className='cardImg'>
+    <div className="card">
+      <div className="cardImg">
         <img src={pokemon.sprites.front_default}></img>
       </div>
-      <h3 className='cardName'>{pokemon.name}</h3>
-      <div className='cardType'>
+      <h3 className="cardName">{pokemon.name}</h3>
+      <div className="cardType">
         <div>タイプ</div>
         {pokemon.types.map((type) => {
-          return <div key={type.type.name}>
-              <span className='typeName'>{type.type.name}</span>
+          return (
+            <div key={type.type.name}>
+              <span className="typeName">{type.type.name}</span>
             </div>
+          )
         })}
       </div>
-      <div className='cardInfo'>
-        <div className='cardData'>
-          <p className='title'>重さ：{pokemon.weight}</p>
+      <div className="cardInfo">
+        <div className="cardData">
+          <p className="title">重さ：{pokemon.weight}</p>
         </div>
-        <div className='cardData'>
-          <p className='title'>高さ：{pokemon.height}</p>
+        <div className="cardData">
+          <p className="title">高さ：{pokemon.height}</p>
         </div>
-        <div className='cardData'>
-          <p className='title'>アビリティ：{pokemon.abilities[0].ability.name}</p>
+        <div className="cardData">
+          <p className="title">
+            アビリティ：{pokemon.abilities[0].ability.name}
+          </p>
         </div>
       </div>
     </div>
